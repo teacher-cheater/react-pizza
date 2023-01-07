@@ -8,7 +8,7 @@ function Sort() {
 
   const changeVisibilityOnClick = (index) => {
     setSelected(index);
-    setOpenPopup(openPopup);
+    setOpenPopup(false);
   };
 
   return (
