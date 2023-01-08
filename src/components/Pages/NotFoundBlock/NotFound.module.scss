@@ -1,0 +1,26 @@
+.content {
+  text-align: center;
+
+  .button {
+    color: #fff;
+    font-size: 18px;
+    display: inline-block;
+    background-color: #24bb3d;
+    border-radius: 30px;
+    padding: 10px 20px;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+    border: 1px solid transparent;
+    &:hover {
+      background-color: darken(#24bb3d, 8%);
+    }
+
+    &:active {
+      background-color: darken(#24bb3d, 12%);
+      transform: translateY(1px);
+    }
+  }
+}
