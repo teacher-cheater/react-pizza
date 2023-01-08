@@ -7,12 +7,12 @@ import Sort from './components/Sort';
 import PizzaBlock from './components/PizzaBlock';
 import { useEffect, useState } from 'react';
 
+const url = 'https://63b991f14482143a3f152506.mockapi.io/pizzas'
+
 
 function App() {
 
   const [items, setItems] = useState([]);
-
-  const url = 'https://63b991f14482143a3f152506.mockapi.io/pizzas'
 
   useEffect(() => {
     fetch(url)
