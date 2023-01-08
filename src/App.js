@@ -1,10 +1,13 @@
-import './App.css';
-import "./scss/app.scss"
-
+import React from "react";
 import Header from "./components/Header";
 import Categories from './components/Categories';
 import Sort from './components/Sort';
-import PizzaBlock from './components/PizzaBlock';
+import PizzaBlock from './components/PizzaBlock/PizzaBlock';
+import MyLoader from './components/PizzaBlock/MyLoader';
+
+import './App.css';
+import "./scss/app.scss"
+
 import { useEffect, useState } from 'react';
 
 const url = 'https://63b991f14482143a3f152506.mockapi.io/pizzas'
@@ -32,9 +35,10 @@ function App() {
           <h2 className="content__title">Все пиццы</h2>
           <div className="content__items">
             {
-              items.map((pizza, index) => (
-                <PizzaBlock
-                  key={index} title={pizza.title} imageUrl={pizza.imageUrl} sizes={pizza.sizes} price={pizza.proce} id={pizza.id} types={pizza.types}
+              items.map((object, index) => (
+                //<PizzaBlock
+                <MyLoader
+                  key={index} {...object}
                 />
               ))
             }
