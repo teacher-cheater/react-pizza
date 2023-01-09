@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Home from "./components/Pages/HomeBlock/Home";
 import Card from "./components/Pages/CardBlock/Card";
 import NotFound from "./components/Pages/NotFoundBlock/NotFound";
+import Footer from "./components/Footer/Footer";
 
 import {
   Routes,
@@ -25,6 +26,7 @@ function App() {
           </Routes>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
