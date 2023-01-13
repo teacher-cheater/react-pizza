@@ -10,6 +10,8 @@ const url = "https://63b991f14482143a3f152506.mockapi.io/pizzas";
 function Home() {
   const [items, setItems] = useState([]);
   const [isLoadingItems, setIsLoadinfItems] = useState(true);
+  const [categoryId, setCategoryId] = useState(0);
+  const [sortType, setSortType] = useState(0);
 
   useEffect(() => {
     fetch(url)
@@ -23,7 +25,10 @@ function Home() {
   return (
     <div>
       <div className="content__top">
-        <Categories />
+        <Categories
+          value={categoryId}
+          onClickCategory={(a, b, c) => setCategoryId(a, b, c)}
+        />
         <Sort />
       </div>
       <h2 className="content__title">Все пиццы</h2>
