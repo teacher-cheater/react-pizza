@@ -4,13 +4,20 @@ import s from "./Search.module.scss";
 import { BsXLg } from "react-icons/bs";
 import { ImSearch } from "react-icons/im";
 
-function Search() {
+function Search({ inputValue, setInputValue }) {
+  console.log(inputValue);
   return (
     <div className={s.content}>
       <div className={s.block}>
         <ImSearch className={s.icon} />
-        <input className={s.input} type="text" placeholder="Поиск пиццы..." />
-        <BsXLg className={s.clean} />
+        <input
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+          className={s.input}
+          type="text"
+          placeholder="Поиск пиццы..."
+        />
+        {inputValue && <BsXLg className={s.clean} />}
       </div>
     </div>
   );

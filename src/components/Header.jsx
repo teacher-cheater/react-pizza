@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Search from "./InputSearch/Search";
 
-function Header() {
+function Header({ inputValue, setInputValue }) {
   return (
     <div className="header">
       <div className="container">
@@ -18,7 +18,7 @@ function Header() {
             </div>
           </div>
         </Link>
-        <Search />
+        <Search inputValue={inputValue} setInputValue={setInputValue} />
         <div className="header__cart">
           <Link to="/card" className="button button--cart">
             <span>520 ₽</span>

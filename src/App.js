@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import Home from "./components/Pages/HomeBlock/Home";
 import Card from "./components/Pages/CardBlock/Card";
@@ -14,9 +14,11 @@ import "./scss/app.scss"
 
 function App() {
 
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <div className="wrapper">
-      <Header />
+      <Header inputValue={inputValue} setInputValue={setInputValue} />
       <div className="content">
         <div className="container">
           <Routes>

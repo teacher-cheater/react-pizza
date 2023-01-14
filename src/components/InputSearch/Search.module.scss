@@ -1,5 +1,4 @@
 .content {
-  //color: $background;
 }
 
 .block {
@@ -34,5 +33,10 @@
   top: 50%;
   transform: translateY(-50%);
   right: 10px;
-  color: rgba(0, 0, 0, 0.3);
+  opacity: 0.3;
+  transition: all 0.2s ease-in-out 0s;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.5;
+  }
 }

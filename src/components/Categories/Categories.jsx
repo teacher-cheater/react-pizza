@@ -9,7 +9,7 @@ function Categories({ value, onChangeCategory }) {
     "Вегетарианская",
     "Гриль",
     "Острые",
-    "Собрать пиццу",
+    "Собрать",
   ];
 
   return (
