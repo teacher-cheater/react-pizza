@@ -1,29 +1,25 @@
 import React from "react";
 
-function Categories({ value, onClickCategory }) {
-  console.log(value);
+import s from "./Categories.module.scss";
 
+function Categories({ value, onChangeCategory }) {
   const categories = [
     "Все",
     "Мясные",
     "Вегетарианская",
     "Гриль",
     "Острые",
-    "Закрытые",
+    "Собрать пиццу",
   ];
 
-  //const showActiveIndex = (index) => {
-  //  setActiveIndex(index);
-  //};
-
   return (
-    <div className="categories">
-      <ul>
+    <div className={s.categories}>
+      <ul className={s.list}>
         {categories.map((categoryName, index) => (
           <li
-            onClick={() => onClickCategory(index)}
+            onClick={() => onChangeCategory(index)}
             key={index}
-            className={value === index ? "active" : ""}
+            className={value === index ? s.active : ""}
           >
             {categoryName}
           </li>
