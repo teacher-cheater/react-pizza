@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 function Sort({ value, onChangeSort }) {
   const [openPopup, setOpenPopup] = useState(false);
-  //const [selected, setSelected] = useState(0);
 
   const sort = [
     { name: "популярности (DESC)", sortProperty: "rating" },

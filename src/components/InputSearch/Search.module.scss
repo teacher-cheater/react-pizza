@@ -1,20 +1,38 @@
 .content {
   //color: $background;
 }
+
 .block {
   position: relative;
   max-width: 400px;
 }
+
 .icon {
-  width: 22px;
-  height: 22px;
+  width: 14px;
+  height: 14px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 12px;
+  color: rgba(0, 0, 0, 0.3);
 }
+
 .input {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  padding: 10px 20px 10px 40px;
+  padding: 10px 20px 10px 30px;
   width: 100%;
+  &:focus {
+    border: 1px solid rgba(0, 0, 0, 0.5);
+  }
+}
+
+.clean {
+  width: 14px;
+  height: 14px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: rgba(0, 0, 0, 0.3);
 }

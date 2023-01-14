@@ -1,14 +1,16 @@
 import React from "react";
 import s from "./Search.module.scss";
 
-import { RiSearchLine } from "react-icons/ri";
+import { BsXLg } from "react-icons/bs";
+import { ImSearch } from "react-icons/im";
 
 function Search() {
   return (
     <div className={s.content}>
       <div className={s.block}>
-        <img className={s.icon} src={RiSearchLine} alt="icon" />
+        <ImSearch className={s.icon} />
         <input className={s.input} type="text" placeholder="Поиск пиццы..." />
+        <BsXLg className={s.clean} />
       </div>
     </div>
   );
