@@ -22,7 +22,7 @@ function App() {
       <div className="content">
         <div className="container">
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home inputValue={inputValue} />} />
             <Route path="/card" element={<Card />} />
             <Route path="*" element={<NotFound />} />
           </Routes>

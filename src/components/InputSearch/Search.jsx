@@ -17,7 +17,9 @@ function Search({ inputValue, setInputValue }) {
           type="text"
           placeholder="Поиск пиццы..."
         />
-        {inputValue && <BsXLg className={s.clean} />}
+        {inputValue && (
+          <BsXLg className={s.clean} onClick={() => setInputValue("")} />
+        )}
       </div>
     </div>
   );
