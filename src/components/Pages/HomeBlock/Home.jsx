@@ -4,6 +4,7 @@ import Categories from "../../Categories/Categories";
 import Sort from "../../Sort";
 import PizzaBlock from "../../PizzaBlock/PizzaBlock";
 import MyLoader from "../../PizzaBlock/MyLoader";
+import Pagination from "../../Pagination/Pagination";
 
 function Home({ inputValue }) {
   const [items, setItems] = useState([]);
@@ -23,7 +24,7 @@ function Home({ inputValue }) {
     const search = inputValue ? `&search=${inputValue}` : "";
 
     fetch(
-      `https://63b991f14482143a3f152506.mockapi.io/pizzas?${category}&sortBy=${sortBy}&order=${order}${search}`
+      `https://63b991f14482143a3f152506.mockapi.io/pizzas?page=1&limit=6&${category}&sortBy=${sortBy}&order=${order}${search}`
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -31,7 +32,7 @@ function Home({ inputValue }) {
         setIsLoadinfItems(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType]);
+  }, [categoryId, sortType, inputValue]);
 
   return (
     <div>
@@ -50,6 +51,7 @@ function Home({ inputValue }) {
               <PizzaBlock key={index} {...object} />
             ))}
       </div>
+      <Pagination />
     </div>
   );
 }
