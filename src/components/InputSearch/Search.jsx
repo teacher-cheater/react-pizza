@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import s from "./Search.module.scss";
 
 import { BsXLg } from "react-icons/bs";
 import { ImSearch } from "react-icons/im";
+import { SearchValue } from "../../App";
 
-function Search({ inputValue, setInputValue }) {
-  console.log(inputValue);
+function Search() {
+  const { inputValue, setInputValue } = useContext(SearchValue);
   return (
     <div className={s.content}>
       <div className={s.block}>

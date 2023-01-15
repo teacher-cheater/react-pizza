@@ -10,6 +10,7 @@ function Home({ inputValue }) {
   const [items, setItems] = useState([]);
   const [isLoadingItems, setIsLoadinfItems] = useState(true);
   const [categoryId, setCategoryId] = useState(0);
+  const [pages, setPages] = useState(1);
   const [sortType, setSortType] = useState({
     name: "популярности",
     sortProperty: "rating",
@@ -24,7 +25,7 @@ function Home({ inputValue }) {
     const search = inputValue ? `&search=${inputValue}` : "";
 
     fetch(
-      `https://63b991f14482143a3f152506.mockapi.io/pizzas?page=1&limit=6&${category}&sortBy=${sortBy}&order=${order}${search}`
+      `https://63b991f14482143a3f152506.mockapi.io/pizzas?page=${pages}&limit=6&${category}&sortBy=${sortBy}&order=${order}${search}`
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -32,7 +33,7 @@ function Home({ inputValue }) {
         setIsLoadinfItems(false);
       });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, inputValue]);
+  }, [categoryId, sortType, inputValue, pages]);
 
   return (
     <div>
@@ -51,7 +52,7 @@ function Home({ inputValue }) {
               <PizzaBlock key={index} {...object} />
             ))}
       </div>
-      <Pagination />
+      <Pagination setPages={setPages} />
     </div>
   );
 }
