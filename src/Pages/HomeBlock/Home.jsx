@@ -1,15 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+//import { useSelector } from "@reduxjs/toolkit";
 
-import Categories from "../../Categories/Categories";
-import Sort from "../../Sort";
-import PizzaBlock from "../../PizzaBlock/PizzaBlock";
-import MyLoader from "../../PizzaBlock/MyLoader";
-import Pagination from "../../Pagination/Pagination";
+import Categories from "../../components/Categories/Categories";
+import Sort from "../../components/Sort";
+import PizzaBlock from "../../components/PizzaBlock/PizzaBlock";
+import MyLoader from "../../components/PizzaBlock/MyLoader";
+import Pagination from "../../components/Pagination/Pagination";
 
-function Home({ inputValue }) {
+import { SearchValue } from "../../App";
+
+function Home() {
+  const categoryId = useSelector((state) => state.filter.categoryId);
+  console.log(categoryId);
+
+  const { inputValue } = useContext(SearchValue);
   const [items, setItems] = useState([]);
   const [isLoadingItems, setIsLoadinfItems] = useState(true);
-  const [categoryId, setCategoryId] = useState(0);
+  //const [categoryId, setCategoryId] = useState(0);
   const [pages, setPages] = useState(1);
   const [sortType, setSortType] = useState({
     name: "популярности",
@@ -40,7 +48,7 @@ function Home({ inputValue }) {
       <div className="content__top">
         <Categories
           value={categoryId}
-          onChangeCategory={(id) => setCategoryId(id)}
+          onChangeCategory={(id) => categoryId(id)}
         />
         <Sort value={sortType} onChangeSort={(id) => setSortType(id)} />
       </div>

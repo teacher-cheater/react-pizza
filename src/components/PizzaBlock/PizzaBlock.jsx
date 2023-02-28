@@ -62,3 +62,6 @@ function PizzaBlock({ title, imageUrl, sizes, price, id, types }) {
 }
 
 export default PizzaBlock;
+
+//.split(" ")[1].substring(0, 5)
+//new Date(data.date * 1000).toUTCString().split(/ /)[4].substring(3, 8)
